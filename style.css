@@ -1,0 +1,95 @@
+/* Corpo e background dinâmico */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0f7fa, #d0f0ff, #e8f5e9);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Cabeçalho */
+header { text-align: center; margin-bottom: 30px; }
+h1 { color: #3f51b5; font-size: 2.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+
+/* Layout principal */
+.container { display: flex; gap: 20px; }
+.left-panel { flex: 3; }
+.right-panel { flex: 1; border-left: 2px solid #ccc; padding-left: 15px; }
+
+/* Tabela principal */
+.main-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-bottom: 20px;
+}
+
+.main-table th, .main-table td {
+  padding: 18px;
+  text-align: center;
+}
+
+.main-table th {
+  background-color: #42a5f5;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.main-table td {
+  background-color: #ffffffcc;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  margin: 5px 0;
+}
+
+/* Cards para valores de stock */
+.main-table td[id$="InStock"] { background-color: #c5e1a5; }
+.main-table td[id$="Received"] { background-color: #90caf9; }
+.main-table td[id$="Ordered"] { background-color: #b39ddb; }
+.main-table td[id$="ToOrder"] { background-color: #81d4fa; }
+
+/* Day control e botões */
+.day-control { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+.display { background: #66bb6a; padding: 15px; border-radius: 12px; text-align: center; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-size: 1.1rem; }
+.buttons button { padding: 10px 18px; border: none; border-radius: 10px; font-size: 14px; font-weight: bold; cursor: pointer; margin-right: 5px; transition: all 0.2s ease-in-out; }
+.buttons button:first-child { background-color: #1e88e5; color: white; }
+.buttons button:first-child:hover { background-color: #1565c0; }
+.buttons button:last-child { background-color: #43a047; color: white; }
+.buttons button:last-child:hover { background-color: #2e7d32; }
+
+/* Parâmetros */
+.parameters table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.parameters td { padding: 10px 8px; text-align: left; }
+.parameters h3 { margin-top: 0; font-size: 1.4rem; }
+.parameters tr th { background-color: #64b5f6; color: white; font-weight: bold; }
+
+/* Log */
+.log-box {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 300px; /* reduzido */
+  overflow-y: auto;
+  font-size: 14px;
+}
+

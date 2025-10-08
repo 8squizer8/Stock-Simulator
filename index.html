@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock de Snus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Simulador de stock de snus</h1>
+  </header>
+
+  <div class="container">
+    <!-- Painel esquerdo -->
+    <div class="left-panel">
+      <!-- Tabela principal -->
+      <table class="main-table">
+        <tr>
+          <th style="width: 20%;">Produto</th>
+          <th style="width: 20%;">To Order</th>
+          <th style="width: 20%;">Ordered</th>
+          <th style="width: 20%;">Received</th>
+          <th style="width: 20%;">In Stock</th>
+        </tr>
+        <tr>
+          <td>Cuba</td>
+          <td id="cubaToOrder">0</td>
+          <td id="cubaOrdered">0</td>
+          <td id="cubaReceived">0</td>
+          <td id="cubaInStock">50</td>
+        </tr>
+        <tr>
+          <td>Velo</td>
+          <td id="veloToOrder">0</td>
+          <td id="veloOrdered">0</td>
+          <td id="veloReceived">0</td>
+          <td id="veloInStock">50</td>
+        </tr>
+        <tr>
+          <td>Pablo</td>
+          <td id="pabloToOrder">0</td>
+          <td id="pabloOrdered">0</td>
+          <td id="pabloReceived">0</td>
+          <td id="pabloInStock">50</td>
+        </tr>
+      </table>
+
+
+      <!-- Controlo do dia -->
+      <div class="day-control">
+        <div class="display">
+          Dia: <span id="diaAtual">0</span>
+        </div>
+        <div class="buttons">
+          <button id="prevDay">◀ Dia anterior</button>
+          <button id="nextDay">Dia seguinte ▶</button>
+        </div>
+      </div>
+
+      <!-- Parâmetros programáveis -->
+      <div class="parameters">
+        <h3>Parâmetros</h3>
+        <table>
+          <!-- Cuba -->
+          <tr><th colspan="2">Cuba</th></tr>
+          <tr>
+            <td>Lead Time da encomenda (dias):</td>
+            <td><input type="number" id="cubaLeadTime" value="5" min="1"></td>
+          </tr>
+          <tr>
+            <td>Consumo (unidades/dia):</td>
+            <td><input type="number" id="cubaDemanda" value="1" min="1"></td>
+          </tr>
+          <tr>
+            <td>Safety Stock (unidades):</td>
+            <td><input type="number" id="cubaSafetyStock" value="35" min="0"></td>
+          </tr>
+          <tr>
+            <td>Qtd. Pedida (unidades):</td>
+            <td><input type="number" id="cubaPedidoQtd" value="20" min="1"></td>
+          </tr>
+
+          <!-- Velo -->
+          <tr><th colspan="2">Velo</th></tr>
+          <tr>
+            <td>Lead Time da encomenda (dias):</td>
+            <td><input type="number" id="veloLeadTime" value="5" min="1"></td>
+          </tr>
+          <tr>
+            <td>Consumo (unidades/dia):</td>
+            <td><input type="number" id="veloDemanda" value="1" min="1"></td>
+          </tr>
+          <tr>
+            <td>Safety Stock (unidades):</td>
+            <td><input type="number" id="veloSafetyStock" value="35" min="0"></td>
+          </tr>
+          <tr>
+            <td>Qtd. Pedida (unidades):</td>
+            <td><input type="number" id="veloPedidoQtd" value="20" min="1"></td>
+          </tr>
+
+          <!-- Pablo -->
+          <tr><th colspan="2">Pablo</th></tr>
+          <tr>
+            <td>Lead Time da encomenda (dias):</td>
+            <td><input type="number" id="pabloLeadTime" value="5" min="1"></td>
+          </tr>
+          <tr>
+            <td>Consumo (unidades/dia):</td>
+            <td><input type="number" id="pabloDemanda" value="1" min="1"></td>
+          </tr>
+          <tr>
+            <td>Safety Stock (unidades):</td>
+            <td><input type="number" id="pabloSafetyStock" value="35" min="0"></td>
+          </tr>
+          <tr>
+            <td>Qtd. Pedida (unidades):</td>
+            <td><input type="number" id="pabloPedidoQtd" value="20" min="1"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Painel direito: log -->
+    <div class="right-panel">
+      <h3>Log de Operações</h3>
+      <div id="logBox" class="log-box"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
